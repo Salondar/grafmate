@@ -5,14 +5,17 @@ const SCALING_FACTOR = 15;
 const NUMBER_SCALE = SCALING_FACTOR * 5;
 
 function drawVerticalLines() {
-    let x = 0;
+    let x = 0, xval = 1;
     while (x < canvas.width) {
 
         if (x === 0) {
-            ctx.lineWidth = 0.3;
+            ctx.lineWidth = 0.3;  // Width of Main Y Axis
         }
         else if (x % NUMBER_SCALE === 0) {
             ctx.lineWidth = 0.2;
+            ctx.fillText(xval, x - 5, 12);
+            ctx.fillText(-xval, -x - 5, 12);
+            xval++;
         }
         ctx.beginPath();
         ctx.moveTo(x, -canvas.height);
@@ -30,14 +33,21 @@ function drawVerticalLines() {
 }
 
 function drawHorizontalLines() {
-    let y = 0;
+    let y = 0, yval = 0;
+  
 
     while (y < canvas.height) {
         if (y === 0) {
-            ctx.lineWidth = 0.3;
+            ctx.lineWidth = 0.3;  // Width of Main x Axis
+            ctx.fillText(yval, -12, y + 12);
+            yval++;
+
         }
-        if (y % NUMBER_SCALE === 0) {
+        else if (y % NUMBER_SCALE === 0) {
             ctx.lineWidth = 0.2;
+            ctx.fillText(-yval, -16, y + 5);
+            ctx.fillText(yval, -12, -y + 5);
+            yval++;
         }
         ctx.beginPath();
         ctx.moveTo(-canvas.height, y);
@@ -59,11 +69,12 @@ function drawGrid() {
     canvas.height = canvas.clientHeight;
     ctx.save();
     ctx.translate(canvas.width / 2, canvas.height / 2); // Go to the center of the canvas
+    ctx.font = "15px arial";
     drawVerticalLines();
     drawHorizontalLines();
 }
 
-function plotFunction() {
+function plotFunction(expr) {
 
 }
 
