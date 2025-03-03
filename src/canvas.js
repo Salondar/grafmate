@@ -4,6 +4,8 @@ const ctx = canvas.getContext("2d");
 const SCALING_FACTOR = 15;
 const NUMBER_SCALE = SCALING_FACTOR * 5;
 
+let maxX, maxY; // There seems to be no good reason to use these variables. Think of sth better
+
 function drawVerticalLines() {
     let x = 0, xval = 1;
     while (x < canvas.width) {
@@ -30,6 +32,7 @@ function drawVerticalLines() {
         x += SCALING_FACTOR;
         ctx.lineWidth = 0.1;
     }
+    maxX = xval;
 }
 
 function drawHorizontalLines() {
@@ -62,6 +65,7 @@ function drawHorizontalLines() {
         y += SCALING_FACTOR;
         ctx.lineWidth = 0.1
     }
+    maxY = yval;
 }
 
 function drawGrid() {
@@ -75,7 +79,8 @@ function drawGrid() {
 }
 
 function plotFunction(expr) {
-
+    // Todo . Use mathjs functions to compile and store all values
+    // of x. use plot example as inspiration
 }
 
 function runMonotonicityAnimation() {
