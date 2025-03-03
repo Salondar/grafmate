@@ -1,7 +1,6 @@
 html {
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
 }
 
 body {
@@ -17,10 +16,9 @@ header {
 }
 
 .container {
-    width: 100%;
-    height: calc(100vw - 80px);
     display: flex;
-    overflow: hidden;
+    height: 100%;
+    width: 100%;
 }
 
 .input {
