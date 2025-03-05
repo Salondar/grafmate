@@ -1,4 +1,4 @@
-import {create, all} from "mathjs";
+import {create, all, ComplexDependencies} from "mathjs";
 const config = {};
 const math = create(all, config);
 
@@ -87,7 +87,7 @@ function plotFunction(expr) {
 
     try {
         compileExpr = math.compile(expr);
-        xValues = math.range(-maxX, maxX, 0.1).toArray();
+        xValues = math.range(-maxX, maxX, 0.01).toArray();
         yValues = xValues.map((x) => {
             return compileExpr.evaluate({x:x});
         })
