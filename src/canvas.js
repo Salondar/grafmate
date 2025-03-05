@@ -115,7 +115,7 @@ function plotFunction(expr) {
     }
 }
 
-function runMonotonicityAnimation() {
+function runMonotonicityAnimation(start, end) {
     
 }
 
