@@ -119,4 +119,10 @@ function runMonotonicityAnimation() {
     
 }
 
-export {drawGrid, plotFunction, runMonotonicityAnimation};
+function prepareForRedraw() {
+    ctx.restore();
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    drawGrid();
+}
+
+export {drawGrid, plotFunction, runMonotonicityAnimation, prepareForRedraw};
