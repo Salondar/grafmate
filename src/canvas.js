@@ -1,3 +1,7 @@
+import {create, all} from "mathjs";
+const config = {};
+const math = create(all, config);
+
 const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 
@@ -79,8 +83,36 @@ function drawGrid() {
 }
 
 function plotFunction(expr) {
-    // Todo . Use mathjs functions to compile and store all values
-    // of x. use plot example as inspiration
+    let compileExpr, xValues, yValues, px1, py1, px2, py2;
+
+    try {
+        compileExpr = math.compile(expr);
+        xValues = math.range(-maxX, maxX, 0.1).toArray();
+        yValues = xValues.map((x) => {
+            return compileExpr.evaluate({x:x});
+        })
+    }
+    catch(err) {
+        console.log(err);
+        return;
+    }
+
+    px1 = xValues.shift() * NUMBER_SCALE;
+    py1 = -(yValues.shift() * NUMBER_SCALE);
+
+    ctx.strokeStyle = "green";
+    ctx.lineWidth = 2;
+    for (const value of xValues) {
+        ctx.beginPath();
+        ctx.moveTo(px1, py1);
+        px2 = value * NUMBER_SCALE;
+        py2 = -(yValues.shift() * NUMBER_SCALE);
+        ctx.lineTo(px2, py2);
+        ctx.stroke();
+
+        px1 = px2;
+        py1 = py2;
+    }
 }
 
 function runMonotonicityAnimation() {
