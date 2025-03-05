@@ -1,4 +1,4 @@
-import {create, all, ComplexDependencies} from "mathjs";
+import {create, all} from "mathjs";
 const config = {};
 const math = create(all, config);
 
