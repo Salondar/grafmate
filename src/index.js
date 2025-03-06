@@ -1,5 +1,5 @@
 import { createInputField } from './components.js';
-import { drawGrid, plotFunction, prepareForRedraw } from './canvas.js';
+import { drawGrid, plotFunction, prepareForRedraw, drawCurrentMonotonicityPic} from './canvas.js';
 import "./reset.css";
 import "./style.css";
 
@@ -11,4 +11,5 @@ expression = document.querySelector("#expression");
 expression.addEventListener("input", ()=> {
     prepareForRedraw();
     plotFunction(expression.value);
+    drawCurrentMonotonicityPic(expression.value, 3);
 })
