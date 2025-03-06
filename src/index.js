@@ -11,5 +11,5 @@ expression = document.querySelector("#expression");
 expression.addEventListener("input", ()=> {
     prepareForRedraw();
     plotFunction(expression.value);
-    drawCurrentMonotonicityPic(expression.value, 3);
+    drawCurrentMonotonicityPic(3, expression.value);
 })
