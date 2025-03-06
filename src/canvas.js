@@ -120,7 +120,13 @@ function runMonotonicityAnimation(start, end) {
 
 function drawCurrentMonotonicityPic(xval, expr) {
     let y, px, py;
-    y = math.compile(expr).evaluate({x:xval});
+    try {
+        y = math.compile(expr).evaluate({x:xval});
+    }
+    catch {
+        return;
+    }
+    
     px = xval * NUMBER_SCALE;
     py = -(y * NUMBER_SCALE);
 
