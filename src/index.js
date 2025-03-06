@@ -14,6 +14,9 @@ expression.addEventListener("input", ()=> {
     prepareForRedraw();
     plotFunction(expression.value);
     createSlider();
-    $("#slider").slider();
+    runSliderAnimation();
 })
 
+function runSliderAnimation() {
+    $("#slider").slider();
+}
