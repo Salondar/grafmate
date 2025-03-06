@@ -1,4 +1,6 @@
-import { createInputField } from './components.js';
+import $ from "jquery";
+import "jquery-ui";
+import { createInputField, createSlider} from './components.js';
 import { drawGrid, plotFunction, prepareForRedraw, drawCurrentMonotonicityPic} from './canvas.js';
 import "./reset.css";
 import "./style.css";
@@ -11,5 +13,5 @@ expression = document.querySelector("#expression");
 expression.addEventListener("input", ()=> {
     prepareForRedraw();
     plotFunction(expression.value);
-    drawCurrentMonotonicityPic(3, expression.value);
+    createSlider();
 })
