@@ -114,10 +114,6 @@ function plotFunction(expr) {
     }
 }
 
-function runMonotonicityAnimation(start, end) {
-    
-}
-
 function drawCurrentMonotonicityPic(xval, expr) {
     let y, px, py;
     try {
@@ -137,12 +133,12 @@ function drawCurrentMonotonicityPic(xval, expr) {
     ctx.lineWidth = 2;
 
     ctx.beginPath();
-    ctx.moveTo(px, 0);
+    ctx.moveTo(px, 0);  // Starts from main x axis
     ctx.lineTo(px, py);
     ctx.stroke();
 
     ctx.beginPath();
-    ctx.moveTo(0, py);
+    ctx.moveTo(0, py);  // Starts from main y axis
     ctx.lineTo(px, py);
     ctx.stroke();
 }
