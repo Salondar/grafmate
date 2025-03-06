@@ -153,4 +153,4 @@ function prepareForRedraw() {
     drawGrid();
 }
 
-export {drawGrid, plotFunction, runMonotonicityAnimation, prepareForRedraw, drawCurrentMonotonicityPic};
+export {drawGrid, plotFunction,prepareForRedraw, drawCurrentMonotonicityPic};
