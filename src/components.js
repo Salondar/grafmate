@@ -8,4 +8,10 @@ function createInputField() {
     inputDiv.appendChild(input);
 }
 
-export {createInputField}
+function createSlider(slidingValue) {
+    const slider = document.createElement("div");
+    slider.setAttribute("id", "slider");
+    inputDiv.appendChild(slider);
+}
+
+export {createInputField, createSlider};
