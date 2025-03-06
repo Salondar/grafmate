@@ -119,13 +119,33 @@ function runMonotonicityAnimation(start, end) {
     
 }
 
-function drawCurrentMonotonicityFrame(xval) {
-    
+function drawCurrentMonotonicityPic(xval, expr) {
+    let y, px, py;
+    y = math.compile(expr).evaluate({x:xval});
+    px = xval * NUMBER_SCALE;
+    py = -(y * NUMBER_SCALE);
+
+    prepareForRedraw();
+    plotFunction(expr)
+
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 2;
+
+    ctx.beginPath();
+    ctx.moveTo(px, 0);
+    ctx.lineTo(px, py);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(0, py);
+    ctx.lineTo(px, py);
+    ctx.stroke();
 }
+
 function prepareForRedraw() {
     ctx.restore();
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     drawGrid();
 }
 
-export {drawGrid, plotFunction, runMonotonicityAnimation, prepareForRedraw};
+export {drawGrid, plotFunction, runMonotonicityAnimation, prepareForRedraw, drawCurrentMonotonicityPic};
