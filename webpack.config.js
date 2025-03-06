@@ -39,5 +39,8 @@ module.exports = {
     resolve: {
         extensions: [".js"],
         fullySpecified: false, // Helps Webpack properly resolve imports
+        alias: {
+            "jquery-ui": "jquery-ui-dist/jquery-ui.js"
+        }
     },
 };
