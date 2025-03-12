@@ -21,8 +21,8 @@ function runSliderAnimation() {
     $( function() {
         $( "#slider" ).slider({
           value: 0,
-          min: -6,
-          max: 6,
+          min: -10,
+          max: 10,
           step: 0.1,
           slide: function( event, ui ) {
             $( "#slider-value" ).val( "x = " + ui.value );
@@ -32,4 +32,3 @@ function runSliderAnimation() {
         $( "#slider-value" ).val( "x = " + $( "#slider" ).slider( "value" ) );
       } );    
 }
-
