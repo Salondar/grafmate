@@ -11,9 +11,19 @@ function createInputField() {
 function createSlider() {
     const slider = document.createElement("div");
     slider.setAttribute("id", "slider");
+
     const sliderPara = document.createElement("p");
-    sliderPara.setAttribute("id", "slider-value");
+
+    const label = document.createElement("label");
+    label.setAttribute("for", "slider-value")
+
+    const input = document.createElement("input");
+    input.setAttribute("id", "slider-value");
+    input.type = "text";
+
     inputDiv.appendChild(sliderPara);
+    sliderPara.appendChild(label);
+    sliderPara.appendChild(input);
     inputDiv.appendChild(slider);
 }
 
