@@ -18,5 +18,16 @@ expression.addEventListener("input", ()=> {
 })
 
 function runSliderAnimation() {
-    $("#slider").slider();
+    $( function() {
+        $( "#slider" ).slider({
+          value: 0,
+          min: -10,
+          max: 10,
+          step: 0.1,
+          slide: function( event, ui ) {
+            $( "#slider-value" ).val( "x = " + ui.value );
+          }
+        });
+        $( "#slider-value" ).val( "x = " + $( "#slider" ).slider( "value" ) );
+      } );    
 }
