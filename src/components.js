@@ -10,7 +10,9 @@ function createInputField() {
 
 function createSlider() {
     const slider = document.createElement("div");
+    const sliderPara = document.createElement("p");
     slider.setAttribute("id", "slider");
+    inputDiv.appendChild(sliderPara);
     inputDiv.appendChild(slider);
 }
 
