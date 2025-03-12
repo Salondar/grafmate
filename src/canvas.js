@@ -129,6 +129,14 @@ function drawCurrentMonotonicityPic(xval, expr) {
     prepareForRedraw();
     plotFunction(expr)
 
+    ctx.font = "20px serif";
+    if (xval < 0) {
+        ctx.fillText(`(${xval}, ${y.toFixed(2)})`, px - 100, py);
+    }
+    else {
+        ctx.fillText(`(${xval}, ${y.toFixed(2)})`, px + 30, py);
+    }
+    
     ctx.strokeStyle = "red";
     ctx.lineWidth = 2;
 
