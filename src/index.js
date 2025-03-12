@@ -21,13 +21,15 @@ function runSliderAnimation() {
     $( function() {
         $( "#slider" ).slider({
           value: 0,
-          min: -10,
-          max: 10,
+          min: -6,
+          max: 6,
           step: 0.1,
           slide: function( event, ui ) {
             $( "#slider-value" ).val( "x = " + ui.value );
+            drawCurrentMonotonicityPic(ui.value, expression.value);
           }
         });
         $( "#slider-value" ).val( "x = " + $( "#slider" ).slider( "value" ) );
       } );    
 }
+
