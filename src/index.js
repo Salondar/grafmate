@@ -1,6 +1,6 @@
 import $ from "jquery";
 import "jquery-ui";
-import { createInputField, createSlider} from './components.js';
+import { createInputField, createSlider, createYesNoButtons} from './components.js';
 import { drawGrid, plotFunction, prepareForRedraw, drawCurrentMonotonicityPic} from './canvas.js';
 import "./reset.css";
 import "./style.css";
