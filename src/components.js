@@ -37,7 +37,7 @@ function createYesNoButtons () {
 
     const noButton = document.createElement("button");
     noButton.setAttribute("id", "no-button");
-    noButton.textContent = "no";
+    noButton.textContent = "não";
 
     inputDiv.appendChild(buttonContainer);
     buttonContainer.appendChild(yesButton);
