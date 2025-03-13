@@ -27,18 +27,20 @@ function createSlider() {
     inputDiv.appendChild(slider);
 }
 
-function addButtons () {
+function createYesNoButtons () {
     const buttonContainer = document.createElement("div");
     buttonContainer.setAttribute("id", "button-container");
 
     const yesButton = document.createElement("button");
     yesButton.setAttribute("id", "yes-button");
+    yesButton.textContent  = "sim";
 
     const noButton = document.createElement("button");
     noButton.setAttribute("id", "no-button");
+    noButton.textContent = "no";
 
     inputDiv.appendChild(buttonContainer);
     buttonContainer.appendChild(yesButton);
     buttonContainer.appendChild(noButton);
 }
-export {createInputField, createSlider, addButtons};
+export {createInputField, createSlider, createYesNoButtons};
