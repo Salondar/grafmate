@@ -93,7 +93,7 @@ function plotFunction(expr) {
         })
     }
     catch(err) {
-        return;
+         return false;
     }
 
     px1 = xValues.shift() * NUMBER_SCALE;
@@ -112,6 +112,7 @@ function plotFunction(expr) {
         px1 = px2;
         py1 = py2;
     }
+    return true;
 }
 
 function drawCurrentMonotonicityPic(xval, expr) {
