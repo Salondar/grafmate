@@ -11,14 +11,19 @@ drawGrid();
 
 expression = document.querySelector("#expression");
 const inputDiv = document.querySelector(".input");
-let btnContainer;
-let yesBtn;
-let noBtn;
+let btnContainer, yesBtn, noBtn, slider, createButtons, hasButtons;
 
 expression.addEventListener("input", ()=> {
+    hasButtons = false;
+    createButtons = false;
     prepareForRedraw();
-    plotFunction(expression.value);
-    createYesNoButtons();
+    createButtons = plotFunction(expression.value);
+
+    if (createButtons) {
+      createYesNoButtons(); 
+      hasButtons = true;
+    }
+    if (hasButtons) {
     btnContainer = document.querySelector("#button-container");
     yesBtn = document.querySelector("#yes-button");
     noBtn = document.querySelector("#no-button");
@@ -32,6 +37,7 @@ expression.addEventListener("input", ()=> {
     noBtn.addEventListener("click", ()=> {
       inputDiv.removeChild(btnContainer);
     })
+  }
     
 })
 
