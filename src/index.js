@@ -10,11 +10,29 @@ createInputField();
 drawGrid();
 
 expression = document.querySelector("#expression");
+const inputDiv = document.querySelector(".input");
+let btnContainer;
+let yesBtn;
+let noBtn;
+
 expression.addEventListener("input", ()=> {
     prepareForRedraw();
     plotFunction(expression.value);
-    createSlider();
-    runSliderAnimation();
+    createYesNoButtons();
+    btnContainer = document.querySelector("#button-container");
+    yesBtn = document.querySelector("#yes-button");
+    noBtn = document.querySelector("#no-button");
+})
+
+
+yesBtn.addEventListener("click", ()=> {
+  createSlider();
+  runSliderAnimation();
+  inputDiv.removeChild(btnContainer);
+});
+
+noBtn.addEventListener("click", ()=> {
+  inputDiv.removeChild(btnContainer);
 })
 
 function runSliderAnimation() {
