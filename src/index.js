@@ -22,18 +22,21 @@ expression.addEventListener("input", ()=> {
     btnContainer = document.querySelector("#button-container");
     yesBtn = document.querySelector("#yes-button");
     noBtn = document.querySelector("#no-button");
+
+    yesBtn.addEventListener("click", ()=> {
+      createSlider();
+      runSliderAnimation();
+      inputDiv.removeChild(btnContainer);
+    });
+    
+    noBtn.addEventListener("click", ()=> {
+      inputDiv.removeChild(btnContainer);
+    })
+    
 })
 
 
-yesBtn.addEventListener("click", ()=> {
-  createSlider();
-  runSliderAnimation();
-  inputDiv.removeChild(btnContainer);
-});
 
-noBtn.addEventListener("click", ()=> {
-  inputDiv.removeChild(btnContainer);
-})
 
 function runSliderAnimation() {
     $( function() {
