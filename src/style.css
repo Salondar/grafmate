@@ -48,3 +48,47 @@ canvas {
     height: 100%;
     background-color: #f8f8f8;
 }
+
+#button-container {
+    display: flex;
+    gap: 0.5em
+}
+
+#button-container p {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    padding-left: 1em;
+    font-size: 20px;
+}
+
+#button-container button {
+    appearance: none;
+    margin-top: 0.5em ;
+    display: inline-block;
+    border: none;
+    border-radius: 0.5em;
+    font-size: 1.4em;
+    text-decoration: none;
+    background: #0069ed;
+    color: #ffffff;
+    font-family: sans-serif;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+}
+
+#button-container button:hover,
+#button-container button:focus {
+    background: #0053ba;
+}
+
+#button-container button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+#button-container button:active {
+    transform: scale(0.99);
+}
