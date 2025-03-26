@@ -9,6 +9,7 @@ function createInputField() {
 }
 
 function createSlider() {
+    const sliderContainer = document.querySelector("#slider-container");
     const slider = document.createElement("div");
     slider.setAttribute("id", "slider");
 
@@ -21,10 +22,10 @@ function createSlider() {
     input.setAttribute("id", "slider-value");
     input.type = "text";
 
-    inputDiv.appendChild(sliderPara);
+    sliderContainer.appendChild(sliderPara);
     sliderPara.appendChild(label);
     sliderPara.appendChild(input);
-    inputDiv.appendChild(slider);
+    sliderContainer.appendChild(slider);
 }
 
 function createYesNoButtons () {
