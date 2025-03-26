@@ -30,7 +30,10 @@ function createSlider() {
 
 function createYesNoButtons () {
     const buttonContainer = document.createElement("div");
+    const questionPara = document.createElement("p");
+    questionPara.textContent = "Adicionar um deslizador?"
     buttonContainer.setAttribute("id", "button-container");
+    buttonContainer.appendChild(questionPara);
 
     const yesButton = document.createElement("button");
     yesButton.setAttribute("id", "yes-button");
