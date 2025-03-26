@@ -1,4 +1,3 @@
-const inputDiv = document.querySelector(".input");
 const sliderContainer = document.querySelector("#slider-container");
 const btnContainer = document.querySelector("#button-container");
 const expressionField = document.querySelector(".expression-field");
@@ -42,7 +41,7 @@ function createYesNoButtons () {
     const noButton = document.createElement("button");
     noButton.setAttribute("id", "no-button");
     noButton.textContent = "não";
-    
+
     btnContainer.appendChild(yesButton);
     btnContainer.appendChild(noButton);
 }
