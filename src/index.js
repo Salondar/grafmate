@@ -9,7 +9,7 @@ let expression;
 createInputField();
 drawGrid();
 
-expression = document.querySelector(".expression-field");
+expression = document.querySelector("#expression");
 const sliderContainer = document.querySelector("#slider-container");
 const btnContainer = document.querySelector("#button-container");
 let yesBtn, noBtn, createButtons;
