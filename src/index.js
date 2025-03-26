@@ -9,40 +9,33 @@ let expression;
 createInputField();
 drawGrid();
 
-expression = document.querySelector("#expression");
+expression = document.querySelector(".expression-field");
 const inputDiv = document.querySelector(".input");
-let btnContainer, yesBtn, noBtn, slider, createButtons, hasButtons;
+let yesBtn, noBtn, createButtons;
+const sliderContainer = document.querySelector("#slider-container");
+const btnContainer = document.querySelector("#button-container");;
 
 expression.addEventListener("input", ()=> {
-    hasButtons = false;
-    createButtons = false;
+    sliderContainer.innerHTML = "";
+    btnContainer.innerHTML = "";
     prepareForRedraw();
-    createButtons = plotFunction(expression.value);
+    createButtons = plotFunction(expression.value); // if maths thought expression is valid return true, otherwise return false
 
     if (createButtons) {
-      createYesNoButtons(); 
-      hasButtons = true;
+      createYesNoButtons();
+      yesBtn = document.querySelector("#yes-button");
+      noBtn = document.querySelector("#no-button");
+      yesBtn.addEventListener("click", ()=> {
+        createSlider();
+        runSliderAnimation();
+        inputDiv.removeChild(btnContainer);
+      });
+      noBtn.addEventListener("click", ()=> {
+        inputDiv.removeChild(btnContainer);
+      })
     }
-    if (hasButtons) {
-    btnContainer = document.querySelector("#button-container");
-    yesBtn = document.querySelector("#yes-button");
-    noBtn = document.querySelector("#no-button");
-
-    yesBtn.addEventListener("click", ()=> {
-      createSlider();
-      runSliderAnimation();
-      inputDiv.removeChild(btnContainer);
-    });
-    
-    noBtn.addEventListener("click", ()=> {
-      inputDiv.removeChild(btnContainer);
-    })
-  }
     
 })
-
-
-
 
 function runSliderAnimation() {
     $( function() {
