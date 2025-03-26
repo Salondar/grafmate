@@ -18,8 +18,12 @@ expression.addEventListener("input", ()=> {
     sliderContainer.innerHTML = "";
     btnContainer.innerHTML = "";
     prepareForRedraw();
-    createButtons = plotFunction(expression.value); // if maths thought expression is valid return true, otherwise return false
-
+    if (expression.value !== "") {
+      createButtons = plotFunction(expression.value); // if maths thought expression is valid return true, otherwise return false
+    }
+    else {
+      createButtons = false;
+    }
     if (createButtons) {
       createYesNoButtons();
       yesBtn = document.querySelector("#yes-button");
