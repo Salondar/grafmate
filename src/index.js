@@ -10,10 +10,9 @@ createInputField();
 drawGrid();
 
 expression = document.querySelector(".expression-field");
-const inputDiv = document.querySelector(".input");
-let yesBtn, noBtn, createButtons;
 const sliderContainer = document.querySelector("#slider-container");
-const btnContainer = document.querySelector("#button-container");;
+const btnContainer = document.querySelector("#button-container");
+let yesBtn, noBtn, createButtons;
 
 expression.addEventListener("input", ()=> {
     sliderContainer.innerHTML = "";
@@ -28,10 +27,10 @@ expression.addEventListener("input", ()=> {
       yesBtn.addEventListener("click", ()=> {
         createSlider();
         runSliderAnimation();
-        inputDiv.removeChild(btnContainer);
+        btnContainer.innerHTML = "";
       });
       noBtn.addEventListener("click", ()=> {
-        inputDiv.removeChild(btnContainer);
+        btnContainer.innerHTML = "";
       })
     }
     
