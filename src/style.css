@@ -92,3 +92,12 @@ canvas {
 #button-container button:active {
     transform: scale(0.99);
 }
+
+.ui-slider-handle {
+    border-radius: 100%;
+}
+
+.ui-slider {
+    height: 10px;
+    margin: 0.5em 1em;
+}
