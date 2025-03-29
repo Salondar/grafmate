@@ -47,7 +47,7 @@ function runSliderAnimation() {
           min: -10,
           max: 10,
           step: 0.1,
-          animate: "slow",
+          animate: "fast",
           slide: function( event, ui ) {
             $( "#slider-value" ).val( "x = " + ui.value );
             drawCurrentMonotonicityPic(ui.value, expression.value);
